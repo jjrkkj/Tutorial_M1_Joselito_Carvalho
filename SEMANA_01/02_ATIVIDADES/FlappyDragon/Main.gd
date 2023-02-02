@@ -1,9 +1,9 @@
 extends Node # instancia a classe Node2D
 
-var status = 1
-var vscore = 0
-var x = 3 # É aqui que a mágica acontece
-var y = 1.5 
+var status = 1 # A variável "status" determina se o jogo está em andamento ou parado. É usada para finalizar o jogo quando o dragão colide com os obstáculos.
+var vscore = 0 # Essa variável determina o score do jogador. É usada para medir a sua desenvoltura no jogo. Ela sempre começa com 0, e a medida que o jogador passa por obstáculos, soma-se mais 1 score.
+var x = 4.2 # É a "velocidade" do dragão. Na verdade, é a posição do fundo e dos obstáculos, que dependendo da velocidade em que passam na tela, faz com que pareça que o dragão está voando mais devagar ou mais rápido, no ponto de vista do usuário.
+var y = 1.5 # É a "gravidade", o que puxa o dragão para baixo.
 
 # executa essa função ao carregar o jogo
 func _ready():
