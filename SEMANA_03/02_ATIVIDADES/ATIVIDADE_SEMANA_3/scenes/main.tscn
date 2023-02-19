@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/HTOWERT.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/main.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.929412, 0.145098, 0.305882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.478431, 0.627451, 0.584314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.478431, 0.627451, 0.584314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.478431, 0.627451, 0.584314, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1294.0
+margin_bottom = 730.0
+color = Color( 1, 0.933333, 0.94902, 1 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 200.0
+margin_right = 1180.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Clique em um botão abaixo! <3"
+align = 1
+valign = 1
+
+[node name="button1" type="Button" parent="."]
+margin_left = 474.0
+margin_top = 564.0
+margin_right = 524.0
+margin_bottom = 594.0
+rect_pivot_offset = Vector2( -304, -44 )
+custom_styles/normal = SubResource( 6 )
+text = "1"
+
+[node name="button2" type="Button" parent="."]
+margin_left = 574.0
+margin_top = 564.0
+margin_right = 624.0
+margin_bottom = 594.0
+rect_pivot_offset = Vector2( -304, -44 )
+custom_styles/normal = SubResource( 2 )
+text = "2"
+
+[node name="button3" type="Button" parent="."]
+margin_left = 674.0
+margin_top = 564.0
+margin_right = 724.0
+margin_bottom = 594.0
+rect_pivot_offset = Vector2( -304, -44 )
+custom_styles/normal = SubResource( 2 )
+text = "3"
+
+[node name="button4" type="Button" parent="."]
+margin_left = 774.0
+margin_top = 564.0
+margin_right = 824.0
+margin_bottom = 594.0
+rect_pivot_offset = Vector2( -304, -44 )
+custom_styles/normal = SubResource( 3 )
+text = "4"
+
+[connection signal="pressed" from="button1" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="button2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="button3" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="button4" to="." method="_on_button4_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/HTOWERT.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://images/seta.png" type="Texture" id=2]
+[ext_resource path="res://scripts/atvd4.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.929412, 0.145098, 0.305882, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.478431, 0.627451, 0.584314, 1 )
+
+[node name="atvd4" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1294.0
+margin_bottom = 730.0
+color = Color( 1, 0.933333, 0.94902, 1 )
+
+[node name="arrow" type="Sprite" parent="."]
+position = Vector2( 640, 550 )
+rotation = 1.5708
+scale = Vector2( 0.073, 0.073 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="back" type="Button" parent="arrow"]
+margin_left = -209.0
+margin_top = -257.0
+margin_right = 204.0
+margin_bottom = 260.0
+custom_styles/normal = SubResource( 3 )
+
+[node name="lineedit" type="LineEdit" parent="."]
+margin_left = 100.0
+margin_top = 165.0
+margin_right = 1180.0
+margin_bottom = 300.0
+rect_pivot_offset = Vector2( 337, 0 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+align = 1
+
+[node name="label" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 385.0
+margin_right = 1180.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 337, 0 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 516.0
+margin_top = 318.0
+margin_right = 766.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( 125, 25 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Mostrar"
+
+[connection signal="pressed" from="arrow/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
