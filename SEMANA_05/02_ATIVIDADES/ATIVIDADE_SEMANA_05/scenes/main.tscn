@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://images/wallpaper.webp" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.729412, 0.945098, 0.721569, 1 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -90.0 ],
+"_edit_vertical_guides_": [ 500.0 ]
+}
+
+[node name="fundo" type="Sprite" parent="."]
+position = Vector2( 503, 327 )
+scale = Vector2( 0.625045, 0.609606 )
+texture = ExtResource( 2 )
+
+[node name="input" type="LineEdit" parent="."]
+margin_left = 240.0
+margin_top = 53.0
+margin_right = 536.0
+margin_bottom = 97.0
+
+[node name="label" type="Label" parent="."]
+margin_left = 240.0
+margin_top = 25.0
+margin_right = 449.0
+margin_bottom = 39.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Digite seu nome:"
+
+[node name="restanteLabel" type="Label" parent="."]
+visible = false
+margin_left = 253.0
+margin_top = 102.0
+margin_right = 433.0
+margin_bottom = 116.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="botao" type="Button" parent="."]
+margin_left = 587.0
+margin_top = 45.0
+margin_right = 769.0
+margin_bottom = 98.0
+text = "Adicionar nome"
+
+[node name="botao2" type="Button" parent="."]
+visible = false
+margin_left = 587.0
+margin_top = 108.0
+margin_right = 769.0
+margin_bottom = 161.0
+text = "Adicionar número na lista"
+
+[node name="botao3" type="Button" parent="."]
+visible = false
+margin_left = 470.0
+margin_top = 270.0
+margin_right = 529.0
+margin_bottom = 312.0
+text = ">"
+
+[node name="outputNome" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 211.0
+margin_right = 657.0
+margin_bottom = 259.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="outputNumero" type="Label" parent="."]
+visible = false
+margin_left = 340.0
+margin_top = 326.0
+margin_right = 657.0
+margin_bottom = 374.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
+align = 1
+valign = 1
+
+[connection signal="pressed" from="botao" to="." method="_on_botao_pressed"]
+[connection signal="pressed" from="botao2" to="." method="_on_botao2_pressed"]
+[connection signal="pressed" from="botao3" to="." method="_on_botao3_pressed"]
